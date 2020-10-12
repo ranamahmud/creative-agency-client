@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, Nav, Button, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import "./NavbarMain.css"
 const NavbarMain = () => {
     return (
@@ -14,7 +15,7 @@ const NavbarMain = () => {
                     <Nav.Link href="#link">Our Partners</Nav.Link>
                     <Nav.Link href="#link">Our Team</Nav.Link>
                     <Nav.Link href="#link">Contact Us</Nav.Link>
-                    <Nav.Link href="#link"><Button>Login</Button></Nav.Link>
+                    <Link className="nav-link text-white" to="/login"><Button>Login</Button></Link>
                 </Nav>
 
             </Navbar.Collapse>

@@ -1,22 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-
 import Home from './components/Home/Home/Home';
+import { createContext } from 'react';
+import { useState } from 'react';
+import Login from './components/Home/Login/Login/Login';
+export const UserContext = createContext();
+
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
+
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home></Home>
-        </Route>
-      </Switch>
-    </Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
+
   );
 }
 
