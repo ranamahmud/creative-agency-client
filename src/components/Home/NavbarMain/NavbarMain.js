@@ -1,10 +1,12 @@
 import React from 'react';
-import { Form, Nav, Button, Navbar } from 'react-bootstrap';
-
+import { Image, Nav, Button, Navbar } from 'react-bootstrap';
+import "./NavbarMain.css"
 const NavbarMain = () => {
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand href="#home">
+                <Image src={require('../../../images/logos/logo.png')} id="logo" />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
