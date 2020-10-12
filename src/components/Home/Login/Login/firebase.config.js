@@ -1,11 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyBTiD5rATxd0_NNaAsIXiJmIHN_O8akO3o",
-  authDomain: "doctors-portal-ph.firebaseapp.com",
-  databaseURL: "https://doctors-portal-ph.firebaseio.com",
-  projectId: "doctors-portal-ph",
-  storageBucket: "doctors-portal-ph.appspot.com",
-  messagingSenderId: "7156633348",
-  appId: "1:7156633348:web:08a1f9dd6293224e390a51",
-  measurementId: "G-FMZXNF8K2E"
+  apiKey: "AIzaSyDDLW0rVv-rx43N3KwDUy6FD443-h3kATM",
+  authDomain: "creative-agency-d474c.firebaseapp.com",
+  databaseURL: "https://creative-agency-d474c.firebaseio.com",
+  projectId: "creative-agency-d474c",
+  storageBucket: "creative-agency-d474c.appspot.com",
+  messagingSenderId: "955418759979",
+  appId: "1:955418759979:web:bba73595e3072116082b6e"
 };
-  export default firebaseConfig;
+export default firebaseConfig;
