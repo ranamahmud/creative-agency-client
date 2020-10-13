@@ -6,9 +6,11 @@ const NavbarMain = () => {
     const location = useLocation();
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">
+
+            <Link className="navbar-brand" to="/">
                 <Image src={require('../../../images/logos/logo.png')} id="logo" />
-            </Navbar.Brand>
+            </Link>
+
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             {
                 location.pathname === '/' &&
