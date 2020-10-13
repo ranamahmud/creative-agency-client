@@ -9,6 +9,10 @@ import Home from './components/Home/Home/Home';
 import { createContext } from 'react';
 import { useState } from 'react';
 import Login from './components/Home/Login/Login/Login';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import Order from './components/Order/Order';
+import ServiceList from './components/ServiceList/ServiceList';
+import Review from './components/Review/Review';
 export const UserContext = createContext();
 
 function App() {
@@ -19,10 +23,22 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Home></Home>
+            <Home />
           </Route>
           <Route path="/login">
-            <Login></Login>
+            <Login />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/order">
+            <Order />
+          </Route>
+          <Route path="/service-list">
+            <ServiceList />
+          </Route>
+          <Route path="/review">
+            <Review />
           </Route>
         </Switch>
       </Router>
