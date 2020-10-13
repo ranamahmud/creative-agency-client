@@ -13,6 +13,8 @@ import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Order from './components/Order/Order';
 import ServiceList from './components/ServiceList/ServiceList';
 import Review from './components/Review/Review';
+import AddService from './components/AddService/AddService';
+import MakeAdmin from './components/MakeAdmin/MakeAdmin';
 export const UserContext = createContext();
 
 function App() {
@@ -39,6 +41,12 @@ function App() {
           </Route>
           <Route path="/review">
             <Review />
+          </Route>
+          <Route path="/add-service">
+            <AddService />
+          </Route>
+          <Route path="/make-admin">
+            <MakeAdmin />
           </Route>
         </Switch>
       </Router>
