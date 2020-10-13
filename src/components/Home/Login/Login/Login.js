@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { Container, Image } from 'react-bootstrap';
+import { Container, Form, Image, Row } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../../../App';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
-
+import './Login.css'
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
@@ -40,14 +40,26 @@ const Login = () => {
     }
 
     return (
-        <Container>
-            <Image src={require('../../../../images/logos/logo.png')} />
 
-            <div className="from-group mx-5">
-                <h1>Login With</h1>
-                <button className="btn btn-brand" onClick={handleGoogleSignIn}>Continue with Google</button>
-                <p>Don’t have an account? Create an account</p>
-            </div>
+        <Container>
+            <Row id="login-logo">
+                <Image src={require('../../../../images/logos/logo.png')} />
+            </Row>
+            <Row id="login-form">
+                <Form >
+
+                    <div id="login-form-item">
+                        <p>
+                            Login with
+    </p>
+                        <button variant="light" type="button" onClick={handleGoogleSignIn}>
+                            <img src={require('../../../../images/logos/google_short.png')} alt="" />
+                            Continue with Google
+  </button>
+                        <h1>Don’t have an account? Create an account</h1>
+                    </div>
+                </Form>
+            </Row>
         </Container>
     );
 };
