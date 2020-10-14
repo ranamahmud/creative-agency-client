@@ -5,7 +5,7 @@ import "./NavbarMain.css"
 const NavbarMain = () => {
     const location = useLocation();
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="lg">
 
             <Link className="navbar-brand" to="/">
                 <Image src={require('../../../images/logos/logo.png')} id="logo" />

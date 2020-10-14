@@ -1,0 +1,13 @@
+#header-container{
+    height: 605px;
+    left: 0px;
+    top: -8.53px;
+    background: #FBD062;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+   #header-triangle {
+       width: 0;
+       height: 0;
+       border-top: 114px solid #FBD062;
+       border-right: 100vw solid transparent;
+   }
