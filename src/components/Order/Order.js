@@ -44,22 +44,42 @@ const Order = () => {
 
                 <Sidebar></Sidebar>
                 <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
-                    <h5 className="text-brand">Add a Doctor</h5>
+
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor="exampleInputEmail1">Email address</label>
+
+                            <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Your name / company’s name" />
+                        </div>
+                        <div className="form-group">
+
                             <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Enter email" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Name</label>
+
                             <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Name" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Upload a image</label>
-                            <input onChange={handleFileChange} type="file" className="form-control" id="exampleInputPassword1" placeholder="Picture" />
+
+                            <textarea onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Project Details" />
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <div className="form-group">
+
+                            <textarea onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Price" />
+                        </div>
+                        <div className="form-group">
+                            {/* <input onChange={handleFileChange} type="file" className="form-control" id="fileUpload" /> */}
+
+                            <label for="files" class="btn">Upload project file</label>
+                            <input id="files"
+                                style={{ visibility: 'hidden' }}
+                                type="file" />
+
+                        </div>
+                        <button type="submit" className="btn btn-primary">Send</button>
+
+
                     </form>
+
                 </div>
             </section>
         </section>

@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Feedback = ({ feedback }) => {
 
 
     const { quote, name, from, img } = feedback;
     return (
+
+
         <div className="card shadow-sm">
             <div className="card-header d-flex  align-items-center">
                 <img className="mx-3" src={require(`../../../images/${img}`)} alt="" width="60" />
@@ -18,6 +21,7 @@ const Feedback = ({ feedback }) => {
             </div>
 
         </div>
+
     );
 };
 
