@@ -1,19 +1,22 @@
 import React from 'react';
 
-const Feedback = (props) => {
-    const { quote, name, from, img } = props.testimonial;
+const Feedback = ({ feedback }) => {
+
+
+    const { quote, name, from, img } = feedback;
     return (
         <div className="card shadow-sm">
-            <div className="card-body">
-                <p className="card-text text-center">{quote}</p>
-            </div>
-            <div className="card-footer d-flex  align-items-center">
-                <img className="mx-3" src={img} alt="" width="60" />
+            <div className="card-header d-flex  align-items-center">
+                <img className="mx-3" src={require(`../../../images/${img}`)} alt="" width="60" />
                 <div>
                     <h6 className="text-primary">{name}</h6>
-                    <p className="m-0">{from}</p>
                 </div>
             </div>
+            <div className="card-body">
+                <h5>{from}</h5>
+                <p className="card-text text-secondary mt-4">{quote}</p>
+            </div>
+
         </div>
     );
 };
