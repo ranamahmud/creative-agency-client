@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ServiceDetail = ({ service }) => {
-    const id = service._id;
     return (
 
         <div className="col-md-4 text-center">
             <Link to={{
-                pathname: "/order",
-                state: { id }
-
+                pathname: '/order',
+                state: {
+                    ...service
+                }
             }}>
                 <img style={{ height: '50px' }} src=
                     {require(`../../../images/icons/${service.img}`)} alt="" />

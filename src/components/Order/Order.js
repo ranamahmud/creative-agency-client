@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Image } from 'react-bootstrap';
+import { Form, Image } from 'react-bootstrap';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
 import './Order.css'
-const Order = () => {
+const Order = (props) => {
+    console.log(props.location.state)
+    const { name } = props.location.state;
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
     const handleBlur = e => {
@@ -14,17 +16,22 @@ const Order = () => {
 
     const handleFileChange = (e) => {
         const newFile = e.target.files[0];
+        console.log(newFile)
         setFile(newFile);
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
         const formData = new FormData()
         console.log(info);
         formData.append('file', file);
-        formData.append('name', info.name);
+        formData.append('userName', info.userName);
         formData.append('email', info.email);
-
-        fetch('https://salty-plateau-71286.herokuapp.com/addADoctor', {
+        formData.append('name', info.name);
+        formData.append('details', info.details);
+        formData.append('price', info.price);
+        console.log(info);
+        // fetch('https://salty-plateau-71286.herokuapp.com/addADoctor', {  
+        fetch('http://localhost:5000/addOrder', {
             method: 'POST',
             body: formData
         })
@@ -35,6 +42,8 @@ const Order = () => {
             .catch(error => {
                 console.error(error)
             })
+
+        e.preventDefault()
     }
 
     return (
@@ -49,7 +58,7 @@ const Order = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
 
-                            <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Your name / company’s name" />
+                            <input onBlur={handleBlur} type="text" className="form-control" name="userName" placeholder="Your name / company’s name" />
                         </div>
                         <div className="form-group">
 
@@ -57,20 +66,34 @@ const Order = () => {
                         </div>
                         <div className="form-group">
 
-                            <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Name" />
+                            <input onBlur={handleBlur} type="text" className="form-control" name="name"
+                                defaultValue={name}
+                            />
                         </div>
                         <div className="form-group">
 
-                            <textarea onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Project Details" />
+                            <textarea onBlur={handleBlur} type="text" className="form-control" name="details" placeholder="Project Details" />
                         </div>
                         <div className="form-group col-md-4">
 
-                            <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Price" />
+                            <input onBlur={handleBlur} type="text" className="form-control" name="price" placeholder="Price" />
                         </div>
                         <div className="form-group">
+                            <div class="custom-file">
+                                <input type="file"
+                                    class="custom-file-input"
+                                    onChange={handleFileChange}
+                                    id="customFile" />
+                                <label id="upload-btn" class="custom-file-label" for="customFile"><Image src={require('../../images/icons/upload-image.png')}
+                                    style={{ width: "24px", height: "24px" }}
+                                />Choose file</label>
+                            </div>
+                        </div>
+                        {/* <div className="form-group">
 
-                            <label for="files" id="upload-btn" >
 
+
+                            <label id="upload-btn" >
                                 <p><Image src={require('../../images/icons/upload-image.png')}
                                     style={{ width: "24px", height: "24px" }}
                                 /> Upload project file</p>
@@ -79,7 +102,8 @@ const Order = () => {
                                 style={{ visibility: 'hidden' }}
                                 type="file" />
 
-                        </div>
+                        </div> */}
+
                         <button type="submit" className="btn btn-primary">Send</button>
 
 
@@ -87,7 +111,7 @@ const Order = () => {
 
                 </div>
             </section>
-        </section>
+        </section >
     );
 };
 

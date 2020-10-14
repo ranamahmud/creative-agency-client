@@ -15,6 +15,7 @@ import ServiceList from './components/ServiceList/ServiceList';
 import Review from './components/Review/Review';
 import AddService from './components/AddService/AddService';
 import MakeAdmin from './components/MakeAdmin/MakeAdmin';
+import PrivateRoute from './components/Home/Login/PrivateRoute/PrivateRoute';
 export const UserContext = createContext();
 
 function App() {
@@ -33,9 +34,7 @@ function App() {
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-          <Route path="/order">
-            <Order />
-          </Route>
+          <PrivateRoute path="/order" component={Order} />
           <Route path="/service-list">
             <ServiceList />
           </Route>
