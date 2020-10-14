@@ -6,7 +6,7 @@ import NavbarMain from '../Home/NavbarMain/NavbarMain';
 const MakeAdmin = () => {
     return (
         <section>
-            <div className="row"><NavbarMain /></div>
+            <NavbarMain />
             <div className="row">
                 <div className="col-md-2 col-sm-6 col-12">
                     <Sidebar></Sidebar>

@@ -38,7 +38,7 @@ const Order = () => {
 
     return (
         <section>
-            <div className="row"><NavbarMain /></div>
+            <NavbarMain />
 
             <section className="container-fluid row">
 
