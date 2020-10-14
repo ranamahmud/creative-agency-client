@@ -1,0 +1,14 @@
+#upload-btn{
+    width: 271px;
+    height: 60px;
+    background: #DEFFED;
+    border: 1px solid #009444;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#upload-btn p{
+    padding-top: 18px;
+    padding-left: 48px;
+}

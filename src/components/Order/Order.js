@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Image } from 'react-bootstrap';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
-
+import './Order.css'
 const Order = () => {
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
@@ -43,7 +44,7 @@ const Order = () => {
             <section className="container-fluid row">
 
                 <Sidebar></Sidebar>
-                <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}>
+                <div className="col-md-10 p-4 pr-5" style={{ right: 0, backgroundColor: "#F4F7FC" }}>
 
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
@@ -62,14 +63,18 @@ const Order = () => {
 
                             <textarea onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Project Details" />
                         </div>
-                        <div className="form-group">
+                        <div className="form-group col-md-4">
 
-                            <textarea onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Price" />
+                            <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Price" />
                         </div>
                         <div className="form-group">
-                            {/* <input onChange={handleFileChange} type="file" className="form-control" id="fileUpload" /> */}
 
-                            <label for="files" class="btn">Upload project file</label>
+                            <label for="files" id="upload-btn" >
+
+                                <p><Image src={require('../../images/icons/upload-image.png')}
+                                    style={{ width: "24px", height: "24px" }}
+                                /> Upload project file</p>
+                            </label>
                             <input id="files"
                                 style={{ visibility: 'hidden' }}
                                 type="file" />
