@@ -2,28 +2,24 @@ import React from 'react';
 import { Image } from 'react-bootstrap';
 
 const OrderedService = ({ service }) => {
+    console.log(service)
     return (
-        <div className="col-md-6" id="service" id={service._id}>
-            <div className="row">
-                <div className="col-md-4">
-                    {
-                        service.image ? <Image style={{
-                            height: '74px',
-                            width: '74px'
-                        }} src={`data:image/png;base64,${service.image.img}`} />
-                            :
-                            <img style={{ height: '200px' }} className="img-fluid mb-3" src={`https://salty-plateau-71286.herokuapp.com/${service.img}`} alt="" />
 
-                    }
+        <div className="col-md-4 card-ordered text-center">
 
-                </div>
-                <div className="col-md-4">
-                    <h1>{service.name}</h1>
-                    <p>{service.details}</p>
+            {
+                service.image ? <Image style={{
+                    height: '74px',
+                    width: '74px',
+                    float: 'left',
+                }} src={`data:image/png;base64,${service.image.img}`} />
+                    :
+                    <img style={{ height: '200px' }} className="img-fluid mb-3" src={`https://salty-plateau-71286.herokuapp.com/${service.img}`} alt="" />
+            }
+            <h5 className="mt-3 mb-3">{service.name}</h5>
+            <p className="text-secondary">{service.details}</p>
+        </div>
 
-                </div>
-            </div>
-        </div >
     );
 };
 

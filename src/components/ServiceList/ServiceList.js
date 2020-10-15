@@ -20,15 +20,13 @@ const ServiceList = () => {
                     <Sidebar></Sidebar>
                 </div>
                 <div className="col-md-10 col-sm-12 col-12 d-flex justify-content-center">
-                    <section>
-                        <div className="row">
-                            {
-                                userService.map(service =>
-                                    <OrderedService service={service} />
-                                )
-                            }
-                        </div>
-                    </section>
+                    <div className="row">
+                        {
+                            userService.map(service =>
+                                <OrderedService service={service} />
+                            )
+                        }
+                    </div>
                 </div>
 
 
