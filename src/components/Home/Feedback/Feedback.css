@@ -1,0 +1,31 @@
+.card-feedback{
+    width: 370px;
+    height: 212px;
+    border: 1px solid #BFBFBF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding:23px;
+}
+
+.card-feedback p{
+    height: 100px;
+    left: 10.9%;
+    right: 65.69%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    /* or 175% */
+
+    letter-spacing: 0.005em;
+
+    color: #707070;
+
+}
+
+.card-header{
+    /* width: 197px; */
+    border:none;
+    height: 60px;
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
 import people from '../../../images/people.png';
 import './HeaderMain.css'
 const HeaderMain = () => {
