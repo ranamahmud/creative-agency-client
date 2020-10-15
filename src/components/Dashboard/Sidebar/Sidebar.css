@@ -1,0 +1,16 @@
+#sidebar-list a{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+
+    color: #000000 !important;
+    white-space: nowrap;
+}
+
+#sidebar-list img{
+    float: left;
+}
