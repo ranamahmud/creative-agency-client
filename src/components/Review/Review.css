@@ -1,0 +1,14 @@
+
+#review-form input{
+    width: 570px;
+    height: 60px;
+}
+#review-form textarea{
+    width: 570px;
+    height: 112px;
+}
+#review-form button{
+    width: 170px;
+    height: 45px;
+    background-color: #111430;
+}

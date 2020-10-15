@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
-
+import './Review.css'
 const Review = () => {
     const [review, setReview] = useState({});
     const handleBlur = e => {
@@ -37,7 +37,7 @@ const Review = () => {
                 <div className="col-md-10 col-sm-12 col-12 d-flex"
                     style={{ backgroundColor: '#F4F7FC' }}
                 >
-                    <Form onSubmit={handleAddReview}>
+                    <Form id="review-form" onSubmit={handleAddReview}>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Control type="text" placeholder="Your name "
                                 name="name"

@@ -19,7 +19,8 @@ const ServiceList = () => {
                 <div className="col-md-2 col-sm-6 col-12">
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-10 col-sm-12 col-12 d-flex justify-content-center">
+                <div className="col-md-10 col-sm-12 col-12 d-flex justify-content-center"
+                    style={{ backgroundColor: '#F4F7FC' }}>
                     <div className="row">
                         {
                             userService.map(service =>
