@@ -24,7 +24,6 @@ const Review = () => {
                 console.log("success");
                 // history.push('/event-tasks');
             })
-        // history.push("/event-tasks")
         e.preventDefault();
     }
     return (
