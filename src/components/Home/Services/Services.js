@@ -14,7 +14,7 @@ const Services = () => {
     }, [])
 
     return (
-        <section className=" mt-5">
+        <section>
             <div className="text-center">
                 <h2>Provide awesome <span style={{ color: '#7AB259' }}>services</span></h2>
 

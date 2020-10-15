@@ -15,18 +15,7 @@ const HeaderMain = () => {
                     <img src={people} alt="" className="img-fluid" />
                 </div>
             </div>
-            <div style={{ height: '200px' }} className="row d-flex align-items-center">
-                <div className="col-md-12 offset-md-1">
-                    <div className="row" id="header-img">
-                        <div className="col-md-2"><Image fluid src={require('../../../images/logos/slack.png')} /></div>
-                        <div className="col-md-2"><Image fluid src={require('../../../images/logos/google.png')} /></div>
-                        <div className="col-md-2"><Image fluid src={require('../../../images/logos/uber.png')} /></div>
-                        <div className="col-md-2"><Image fluid src={require('../../../images/logos/netflix.png')} /></div>
-                        <div className="col-md-2"><Image fluid src={require('../../../images/logos/airbnb.png')} /></div>
 
-                    </div>
-                </div>
-            </div>
         </main>
     );
 };
