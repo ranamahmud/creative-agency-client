@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, Form } from 'react-bootstrap';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
 
@@ -11,15 +12,24 @@ const Review = () => {
                     <Sidebar></Sidebar>
                 </div>
                 <div className="col-md-5 col-sm-12 col-12 d-flex justify-content-center">
-                    {/* <Calendar
-                        onChange={handleDateChange}
-                        value={new Date()}
-                    /> */}
-                    <h1>Main</h1>
+                    <Form>
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Control type="text" placeholder="Your name " />
+
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Control type="password" placeholder="Company’s name, Designation" />
+                        </Form.Group>
+                        <Form.Group controlId="exampleForm.ControlTextarea1">
+                            <Form.Control as="textarea" rows={3} placeholder="Description" />
+                        </Form.Group>
+                        <Button variant="primary" type="submit">
+                            Submit
+  </Button>
+                    </Form>
                 </div>
-                <div className="col-md-5 col-sm-12 col-12">
-                    {/* <AppointmentsByDate appointments={appointments}></AppointmentsByDate> */}
-                </div>
+
             </div>
         </section>
     );
