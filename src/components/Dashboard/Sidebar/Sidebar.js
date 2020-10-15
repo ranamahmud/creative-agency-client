@@ -53,7 +53,9 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Link to="/add-service" >
-                            {/* <FontAwesomeIcon icon={faUsers} /> <span>Add Service</span> */}
+                            {/* {/* <FontAwesomeIcon icon={faUsers} /> */}
+                            <span>Add Service</span>
+
                         </Link>
                     </li>
                     <li>
