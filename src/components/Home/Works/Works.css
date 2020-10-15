@@ -1,0 +1,16 @@
+#works{
+        /* width: 1443px; */
+        width:100%;
+        height: 724px;
+
+    background: #111430;
+}
+.carousel-item{
+    width: 465.49px;
+    height: 334.7px;
+    border-radius: 8.23879px;
+}
+
+.carousel-inner .carousel-item {
+    margin-right: inherit;
+}

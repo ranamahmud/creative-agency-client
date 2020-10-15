@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import './Footer.css'
 const Footer = () => {
     return (
-        <section className="footer-home row my-5 py-5">
+        <footer id="footer" className="footer-home row my-5 py-5">
             <div>
                 <Row>
                     <Col md={6}>
@@ -46,7 +46,7 @@ const Footer = () => {
 
                 </div>
             </Col>
-        </section>
+        </footer>
     );
 };
 
