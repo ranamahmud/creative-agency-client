@@ -4,3 +4,12 @@
     left: 135px;
     top: 525px;
 }
+#header-img img{
+    /* width: 99px; */
+    /* height: 56px; */
+    opacity: 0.4;
+    
+}
+.col-md-2{
+   margin:auto;
+}
