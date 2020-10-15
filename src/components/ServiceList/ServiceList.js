@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
+import OrderedService from './OrderedService/OrderedService';
 
 const ServiceList = () => {
     const [userService, setUserService] = useState([])
@@ -18,21 +19,20 @@ const ServiceList = () => {
                 <div className="col-md-2 col-sm-6 col-12">
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-5 col-sm-12 col-12 d-flex justify-content-center">
-                    {/* <Calendar
-                        onChange={handleDateChange}
-                        value={new Date()}
-                    /> */}
-                    <h1>Service List</h1>
-                    {
-                        userService.map(service =>
-                            <p>{service.name}</p>
-                        )
-                    }
+                <div className="col-md-10 col-sm-12 col-12 d-flex justify-content-center">
+                    <section>
+                        <div className="row">
+                            {
+                                userService.map(service =>
+                                    <OrderedService service={service} />
+                                )
+                            }
+                        </div>
+                    </section>
                 </div>
-                <div className="col-md-5 col-sm-12 col-12">
-                    {/* <AppointmentsByDate appointments={appointments}></AppointmentsByDate> */}
-                </div>
+
+
+
             </div>
         </section >
     );

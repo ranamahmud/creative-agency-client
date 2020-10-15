@@ -79,12 +79,12 @@ const Order = (props) => {
                             <input onBlur={handleBlur} type="text" className="form-control" name="price" placeholder="Price" />
                         </div>
                         <div className="form-group">
-                            <div class="custom-file">
+                            <div className="custom-file">
                                 <input type="file"
-                                    class="custom-file-input"
+                                    className="custom-file-input"
                                     onChange={handleFileChange}
                                     id="customFile" />
-                                <label id="upload-btn" class="custom-file-label" for="customFile"><Image src={require('../../images/icons/upload-image.png')}
+                                <label id="upload-btn" className="custom-file-label" for="customFile"><Image src={require('../../images/icons/upload-image.png')}
                                     style={{ width: "24px", height: "24px" }}
                                 />Choose file</label>
                             </div>
