@@ -2,7 +2,6 @@
         /* width: 1443px; */
         width:100%;
         height: 724px;
-
     background: #111430;
 }
 .carousel-item{
@@ -13,4 +12,27 @@
 
 .carousel-inner .carousel-item {
     margin-right: inherit;
+}
+
+#works-carousel{
+    margin-left: 190px;
+    padding-top: 81px;
+}
+
+.image-item{
+    margin-right: 44px;
+    margin-bottom: 30px;;
+}
+
+#works-text {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 43px;
+    /* identical to box height, or 126% */
+
+    letter-spacing: 0.396px;
+    padding-top: 107px;
+
 }
