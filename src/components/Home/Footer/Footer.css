@@ -5,3 +5,56 @@
     top: 2993px;
     background: #FBD062;
 }
+#footer-form input{
+    width:630px;
+}
+#footer-form textarea{
+    width:630px;
+}
+#footer-btn{
+    width: 170px;
+    height: 45px;
+    float: left;
+}
+
+#footer-text h1{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 43px;
+    /* or 126% */
+
+    letter-spacing: 0.396px;
+
+    color: #2D2D2D;
+width: 409px;
+height: 82px;
+}
+#footer-text p{
+    width: 401px;
+    height: 71px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    /* or 175% */
+
+    letter-spacing: 0.396px;
+
+    color: rgba(0, 0, 0, 0.7);
+
+}
+#footer-copy{
+    height: 22px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    /* or 175% */
+    letter-spacing: 0.396px;
+    color: rgba(0, 0, 0, 0.7);
+
+}
