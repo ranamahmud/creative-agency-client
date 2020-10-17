@@ -98,9 +98,10 @@ const Order = (props) => {
                         <div className="form-group">
                             <div className="custom-file"
                             >
-                                <label id="upload-btn" className="custom-file-label" for="customFile"><Image src={require('../../images/icons/upload-image.png')}
+                                <label id="upload-btn" className="custom-file-label" htmlFor="customFile"
+                                ><Image src={require('../../images/icons/upload-image.png')}
                                     style={{ width: "24px", height: "24px" }}
-                                />Upload project file</label>
+                                    />Upload project file</label>
                                 <input type="file"
                                     onChange={handleFileChange}
                                     id="customFile"

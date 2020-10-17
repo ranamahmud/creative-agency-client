@@ -7,7 +7,7 @@ const Sidebar = (props) => {
     const location = useLocation();
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [isAdmin, setIsAdmin] = useState(null);
+    const [isAdmin, setIsAdmin] = useState(true);
 
     useEffect(() => {
         // fetch('https://salty-plateau-71286.herokuapp.com/isAdmin', {
@@ -50,7 +50,7 @@ const Sidebar = (props) => {
 
                     </div>
                 }
-                {
+                {/* {
                     (isAdmin === true
                         // &&
                         // (
@@ -68,7 +68,7 @@ const Sidebar = (props) => {
                             }}
                         />
                     )
-                }
+                } */}
 
                 {
 
@@ -76,20 +76,20 @@ const Sidebar = (props) => {
                     <div>
                         <li>
                             <Link to="/service-list-admin" >
-                                {/* <FontAwesomeIcon icon={faCalendar} /> */}
+                                <Image src={require('../../../images/icons/service-list.png')} />
                                 <span>Service List</span>
                             </Link>
                         </li>
                         <li>
                             <Link to="/add-service" >
-                                {/* {/* <FontAwesomeIcon icon={faUsers} /> */}
+                                <Image src={require('../../../images/icons/plus.png')} />
                                 <span>Add Service</span>
 
                             </Link>
                         </li>
                         <li>
                             <Link to="/make-admin" >
-                                {/* {/* <FontAwesomeIcon icon={faFileAlt} />  */}
+                                <Image src={require('../../../images/icons/make-admin.png')} />
                                 <span>Make Admin</span>
                             </Link>
                         </li>
