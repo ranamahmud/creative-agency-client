@@ -43,6 +43,7 @@ const Order = (props) => {
                 .then(response => response.json())
                 .then(data => {
                     alert.success('Order Placed Successfully!')
+                    document.querySelector('#order-form').reset()
                 })
                 .catch(error => {
                     console.error(error)
