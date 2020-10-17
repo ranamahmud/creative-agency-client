@@ -67,7 +67,7 @@ const Order = (props) => {
 
                             <input onBlur={handleBlur} type="text" className="form-control" name="name"
                                 defaultValue={
-                                    props.location.state.name || ''
+                                    props.location.state === undefined ? '' : props.location.state.name
                                 }
 
                             />
