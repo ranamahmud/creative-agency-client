@@ -15,10 +15,8 @@ const ServiceListAdmin = () => {
     return (
         <section>
             <NavbarMain />
-            <div className="row">
-                <div className="col-md-2 col-sm-6 col-12">
-                    <Sidebar></Sidebar>
-                </div>
+            <section className="container-fluid row">
+                <Sidebar></Sidebar>
                 <div className="col-md-10 col-sm-12 col-12 d-flex justify-content-center"
                     style={{ backgroundColor: '#F4F7FC' }}>
                     <div className="row">
@@ -32,7 +30,7 @@ const ServiceListAdmin = () => {
 
 
 
-            </div>
+            </section>
         </section >
     );
 };

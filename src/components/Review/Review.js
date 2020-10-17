@@ -29,13 +29,11 @@ const Review = () => {
     return (
         <section>
             <NavbarMain />
-            <div className="row">
-                <div className="col-md-2 col-sm-6 col-12">
-                    <Sidebar></Sidebar>
-                </div>
+            <section className="container-fluid row">
+
+                <Sidebar></Sidebar>
                 <div className="col-md-10 col-sm-12 col-12 d-flex"
-                    style={{ backgroundColor: '#F4F7FC' }}
-                >
+                    style={{ backgroundColor: '#F4F7FC' }}>
                     <Form id="review-form" onSubmit={handleAddReview}>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Control type="text" placeholder="Your name "
@@ -62,7 +60,7 @@ const Review = () => {
                     </Form>
                 </div>
 
-            </div>
+            </section>
         </section>
     );
 };

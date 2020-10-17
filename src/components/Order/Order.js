@@ -3,8 +3,10 @@ import { Image } from 'react-bootstrap';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
 import './Order.css'
+import { useAlert } from 'react-alert'
+
 const Order = (props) => {
-    console.log(props.location.state)
+    const alert = useAlert()
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
     const handleBlur = e => {
@@ -22,25 +24,31 @@ const Order = (props) => {
     const handleSubmit = (e) => {
         const formData = new FormData()
         console.log(info);
-        formData.append('file', file);
-        formData.append('userName', info.userName);
-        formData.append('email', info.email);
-        formData.append('name', info.name);
-        formData.append('details', info.details);
-        formData.append('price', info.price);
-        console.log(info);
-        // fetch('https://salty-plateau-71286.herokuapp.com/addADoctor', {  
-        fetch('http://localhost:5000/addOrder', {
-            method: 'POST',
-            body: formData
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
+        if (file === null) {
+            alert.error('You must select a image file')
+
+        } else {
+            formData.append('file', file);
+            formData.append('userName', info.userName);
+            formData.append('email', info.email);
+            formData.append('name', info.name);
+            formData.append('details', info.details);
+            formData.append('price', info.price);
+            console.log(info);
+            // fetch('https://salty-plateau-71286.herokuapp.com/addADoctor', {  
+            fetch('http://localhost:5000/addOrder', {
+                method: 'POST',
+                body: formData
             })
-            .catch(error => {
-                console.error(error)
-            })
+                .then(response => response.json())
+                .then(data => {
+                    alert.success('Order Placed Successfully!')
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+
+        }
 
         e.preventDefault()
     }
@@ -52,7 +60,9 @@ const Order = (props) => {
             <section className="container-fluid row">
 
                 <Sidebar></Sidebar>
-                <div className="col-md-10 p-4 pr-5" style={{ right: 0, backgroundColor: "#F4F7FC" }}>
+                <div className="col-md-10 col-sm-12 col-12 d-flex"
+                    style={{ backgroundColor: '#F4F7FC' }}>
+
 
                     <form id="order-form" onSubmit={handleSubmit}>
                         <div className="form-group">
