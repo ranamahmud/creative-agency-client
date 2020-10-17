@@ -23,7 +23,9 @@ const ServiceList = () => {
                     <div className="row">
                         {
                             userService.map(service =>
-                                <OrderedService service={service} />
+                                <OrderedService
+                                    key={service._id}
+                                    service={service} />
                             )
                         }
                     </div>

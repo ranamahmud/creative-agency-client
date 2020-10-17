@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-bootstrap';
-
+import './OrderedService.css'
 const OrderedService = ({ service }) => {
     console.log(service)
     return (

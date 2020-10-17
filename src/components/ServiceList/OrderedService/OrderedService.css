@@ -1,9 +1,9 @@
 .card-ordered{
     width: 415px;
     height: 254px;
-    left: 332px;
-    top: 126px;
-
     background: #FFFFFF;
     border-radius: 20px;
+    margin-right: 35px;
+    margin-top: 44px;
+    margin-left: 27px;
 }
