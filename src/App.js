@@ -26,31 +26,15 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/dashboard" component={Dashboard} />
           <PrivateRoute path="/order" component={Order} />
-          <Route path="/service-list">
-            <ServiceList />
-          </Route>
-          <Route path="/service-list-admin">
-            <ServiceListAdmin />
-          </Route>
-          <Route path="/review">
-            <Review />
-          </Route>
-          <Route path="/add-service">
-            <AddService />
-          </Route>
-          <Route path="/make-admin">
-            <MakeAdmin />
-          </Route>
+          <Route path="/service-list" component={ServiceList} />
+          <Route path="/service-list-admin" component={ServiceListAdmin} />
+          <Route path="/review" component={Review} />
+          <Route path="/add-service" component={AddService} />
+          <Route path="/make-admin" component={MakeAdmin} />
         </Switch>
       </Router>
     </UserContext.Provider>

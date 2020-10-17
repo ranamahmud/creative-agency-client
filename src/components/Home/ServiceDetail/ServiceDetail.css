@@ -1,0 +1,48 @@
+#service-card:hover{
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+#service-card{
+        width: 370px;
+        height: 319px;
+        margin-bottom: 30px;
+}
+#service-card img{
+    width: 74px;
+    height: 74px;
+    margin-top:30px;
+}
+
+#service-card a{
+   text-decoration: none;
+}
+#service-card h5{
+    height: 16px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 16px;
+    /* identical to box height, or 80% */
+    letter-spacing: 0.396px;
+    color: #111430 !important;
+}
+
+#service-card p{
+    
+    height: 91px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    /* or 175% */
+
+    text-align: center;
+    letter-spacing: 0.396px;
+
+    color: rgba(0, 0, 0, 0.7);
+
+}

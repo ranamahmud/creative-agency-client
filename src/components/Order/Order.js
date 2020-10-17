@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Form, Image } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
 import './Order.css'
 const Order = (props) => {
     console.log(props.location.state)
-    const { name } = props.location.state;
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
     const handleBlur = e => {
@@ -67,7 +66,10 @@ const Order = (props) => {
                         <div className="form-group">
 
                             <input onBlur={handleBlur} type="text" className="form-control" name="name"
-                                defaultValue={name}
+                                defaultValue={
+                                    props.location.state.name || ''
+                                }
+
                             />
                         </div>
                         <div className="form-group">

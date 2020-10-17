@@ -15,8 +15,14 @@ const Services = () => {
 
     return (
         <section>
-            <div className="text-center">
-                <h2>Provide awesome <span style={{ color: '#7AB259' }}>services</span></h2>
+            <div className="text-center"
+                style={{
+                    paddingTop: "50px"
+                }}
+            >
+                <h2>Provide awesome <span style={{
+                    color: '#7AB259',
+                }}>services</span></h2>
 
             </div>
             <div className="d-flex justify-content-center">
