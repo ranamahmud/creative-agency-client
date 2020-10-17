@@ -54,7 +54,7 @@ const Order = (props) => {
                 <Sidebar></Sidebar>
                 <div className="col-md-10 p-4 pr-5" style={{ right: 0, backgroundColor: "#F4F7FC" }}>
 
-                    <form onSubmit={handleSubmit}>
+                    <form id="order-form" onSubmit={handleSubmit}>
                         <div className="form-group">
 
                             <input onBlur={handleBlur} type="text" className="form-control" name="userName" placeholder="Your name / company’s name" />
@@ -76,37 +76,25 @@ const Order = (props) => {
 
                             <textarea onBlur={handleBlur} type="text" className="form-control" name="details" placeholder="Project Details" />
                         </div>
-                        <div className="form-group col-md-4">
+                        <div className="form-group">
 
-                            <input onBlur={handleBlur} type="text" className="form-control" name="price" placeholder="Price" />
+                            <input onBlur={handleBlur} type="number" className="form-control" name="price" placeholder="Price" />
                         </div>
                         <div className="form-group">
-                            <div className="custom-file">
-                                <input type="file"
-                                    className="custom-file-input"
-                                    onChange={handleFileChange}
-                                    id="customFile" />
+                            <div className="custom-file"
+                            >
                                 <label id="upload-btn" className="custom-file-label" for="customFile"><Image src={require('../../images/icons/upload-image.png')}
                                     style={{ width: "24px", height: "24px" }}
-                                />Choose file</label>
+                                />Upload project file</label>
+                                <input type="file"
+                                    onChange={handleFileChange}
+                                    id="customFile"
+                                />
+
                             </div>
                         </div>
-                        {/* <div className="form-group">
 
-
-
-                            <label id="upload-btn" >
-                                <p><Image src={require('../../images/icons/upload-image.png')}
-                                    style={{ width: "24px", height: "24px" }}
-                                /> Upload project file</p>
-                            </label>
-                            <input id="files"
-                                style={{ visibility: 'hidden' }}
-                                type="file" />
-
-                        </div> */}
-
-                        <button type="submit" className="btn btn-primary">Send</button>
+                        <button id="order-send" type="submit" className="btn btn-dark">Send</button>
 
 
                     </form>

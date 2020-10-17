@@ -1,4 +1,4 @@
-/* #upload-btn{
+#upload-btn{
     width: 271px;
     height: 60px;
     background: #DEFFED;
@@ -6,9 +6,43 @@
     box-sizing: border-box;
     border-radius: 5px;
     display: inline-block;
+    text-align: center;
+    padding:15px;
 }
+
+
 
 #upload-btn p{
     padding-top: 18px;
     padding-left: 48px;
-} */
+}
+
+#order-form input{
+width: 570px;
+height: 60px;
+
+}
+
+#order-form textarea{
+   width: 570px;
+   height: 112px;
+}
+
+#upload-btn::after{
+    visibility: hidden;
+}
+#customFile:focus{
+     outline: none;
+
+}
+
+#order-send{
+    margin-top: 30px;
+    width: 170px;
+    height: 60px;
+}
+
+#order-form{
+    margin-top: 83px;
+    margin-left: 39px;
+}
