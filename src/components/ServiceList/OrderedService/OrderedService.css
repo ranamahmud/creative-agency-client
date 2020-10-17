@@ -7,3 +7,52 @@
     margin-top: 44px;
     margin-left: 27px;
 }
+
+
+.card-ordered img {
+    width: 74px;
+    height: 74px;
+    margin: 24px;
+
+}
+
+.order-title{
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 16px;
+    /* identical to box height, or 80% */
+
+    text-align: center;
+    letter-spacing: 0.396px;
+    text-align: left;
+
+    color: #111430;
+    margin-bottom: 16px;
+}
+.order-detail{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    /* or 175% */
+    text-align: left;
+
+    letter-spacing: 0.396px;
+
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.order-status {
+      margin: 25px;
+    width: 108px;
+    height: 40px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}

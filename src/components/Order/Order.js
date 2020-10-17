@@ -7,7 +7,9 @@ import { useAlert } from 'react-alert'
 
 const Order = (props) => {
     const alert = useAlert()
-    const [info, setInfo] = useState({});
+    const [info, setInfo] = useState({
+        status: 'Pending'
+    });
     const [file, setFile] = useState(null);
     const handleBlur = e => {
         const newInfo = { ...info };
