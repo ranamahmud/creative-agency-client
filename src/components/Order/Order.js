@@ -46,6 +46,8 @@ const Order = (props) => {
                     document.querySelector('#order-form').reset()
                 })
                 .catch(error => {
+                    alert.error('Order Placed Failed!')
+
                     console.error(error)
                 })
 

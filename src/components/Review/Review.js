@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
 import './Review.css'
+import { useAlert } from 'react-alert'
+import { UserContext } from '../../App';
+
 const Review = () => {
-    const [review, setReview] = useState({});
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    console.log(loggedInUser);
+    const alert = useAlert()
+    console.log(loggedInUser.photoURL);
+    const [review, setReview] = useState({
+        img: loggedInUser.photoURL
+    });
     const handleBlur = e => {
         const newReview = { ...review };
         newReview[e.target.name] = e.target.value;
@@ -23,6 +32,10 @@ const Review = () => {
             .then(res => {
                 console.log("success");
                 // history.push('/event-tasks');
+                alert.success('Review Placed Successfully!')
+                document.querySelector('#review-form').reset()
+
+
             })
         e.preventDefault();
     }

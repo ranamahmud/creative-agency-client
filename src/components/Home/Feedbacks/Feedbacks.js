@@ -18,9 +18,11 @@ const Feedbacks = () => {
                 <div className="text-center">
                     <h5 id="feedback-title">Clients <span style={{ color: '#7AB259' }}>Feedback</span></h5>
                 </div>
-                <div className="card-deck mt-5">
+                <div className="row card-deck  mt-5">
                     {
-                        feedbacks.map(feedback => <Feedback feedback={feedback} key={feedback.name} />)
+                        feedbacks
+                            .sort(() => 0.5 - Math.random())
+                            .slice(0, 3).map(feedback => <Feedback feedback={feedback} key={feedback.name} />)
                     }
                 </div>
             </div>
