@@ -13,7 +13,7 @@ const Header = () => {
             </div>
             <div id="header-triangle"></div>
 
-            <div className="row d-flex align-items-center">
+            <div id="partners" className="row d-flex align-items-center">
                 <div className="col-md-12 offset-md-1">
                     <div className="row" id="header-img">
                         <div className="col-md-2"><Image fluid src={require('../../../images/logos/slack.png')} /></div>

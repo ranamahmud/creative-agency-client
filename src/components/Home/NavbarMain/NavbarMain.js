@@ -17,8 +17,10 @@ const NavbarMain = () => {
 
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Our Partners</Nav.Link>
+                        <Link className="nav-link" to="/">
+                            Home
+                        </Link>
+                        <Nav.Link href="#partners">Our Partners</Nav.Link>
                         <Nav.Link href="#link">Our Team</Nav.Link>
                         <Nav.Link href="#footer">Contact Us</Nav.Link>
                         <Link className="nav-link text-white" to="/login">
