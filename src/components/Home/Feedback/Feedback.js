@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Feedback.css'
 const Feedback = ({ feedback }) => {
 
@@ -10,10 +9,10 @@ const Feedback = ({ feedback }) => {
 
         <div className="card shadow-sm card-feedback">
             <div className="card-header bg-transparent d-flex  align-items-center">
-                <img className="mx-3" src={require(`../../../images/${img}`)} alt="" width="60" />
+                <img className="mx-3" src={require(`../../../images/${img}`)} alt="" width="64" height="64" />
                 <div>
-                    <h6 className="text-primary">{name}</h6>
-                    <h5>{from}</h5>
+                    <h6 id="feedback-name">{name}</h6>
+                    <h5 id="feedback-from">{from}</h5>
 
                 </div>
             </div>

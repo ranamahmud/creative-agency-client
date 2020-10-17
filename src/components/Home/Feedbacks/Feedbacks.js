@@ -15,8 +15,8 @@ const Feedbacks = () => {
     return (
         <section className="testimonials my-5 py-5">
             <div className="container">
-                <div className="section-header">
-                    <h5 className="text-primary text-uppercase">Clients Feedback</h5>
+                <div className="text-center">
+                    <h5 id="feedback-title">Clients <span style={{ color: '#7AB259' }}>Feedback</span></h5>
                 </div>
                 <div className="card-deck mt-5">
                     {
