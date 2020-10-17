@@ -20,6 +20,8 @@
     "react-multi-carousel": "^2.5.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-select": "^3.1.0",
+    "react-select-input": "^1.0.5",
     "ua-parser-js": "^0.7.22"
   },
   "scripts": {

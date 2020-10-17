@@ -3,7 +3,11 @@ import { UserContext } from '../../App';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
 import './ServiceListAdmin.css'
+
 const ServiceListAdmin = () => {
+    const [selectedOption, setSelectedOption] = useState();
+
+
     const [userService, setUserService] = useState([])
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     useEffect(() => {
@@ -11,11 +15,16 @@ const ServiceListAdmin = () => {
             .then(res => res.json())
             .then(data => setUserService(data))
     }, [])
-    const handleChange = (e, service) => {
-        console.log(e.target.selected)
-        e.target.selected = e.target.value
-        service.value = e.target.value
+    const colors = {
+        'On Going': "#FFBD3E",
+        'Done': "#009444",
+        'Pending': "#FF4545"
     }
+    const handleChange = (e) => {
+        console.log(e.target.value);
+        e.target.style.color = colors[e.target.value]
+    };
+
     return (
         <section>
             <NavbarMain />
@@ -50,30 +59,19 @@ const ServiceListAdmin = () => {
                                                 <td style={{ width: "130px" }}>{service.email}</td>
                                                 <td style={{ width: "150px" }}>{service.name}</td>
                                                 <td>{service.details}</td>
-                                                <td>
+                                                <td style={{ width: "200px" }}>
+                                                    <select class="custom-select" id="inputGroupSelect01"
+                                                        defaultValue={service.status}
+                                                        style={{
+                                                            color: colors[service.status]
+                                                        }}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option value="Done" style={{ color: colors['Done'] }}>Done</option>
+                                                        <option value="On Going" style={{ color: colors['On Going'] }}>On Going</option>
+                                                        <option value="Pending" style={{ color: colors['Pending'] }}>Pending</option>
+                                                    </select>
 
-                                                    {
-                                                        <form>
-                                                            <select >
-                                                                <option value="On Going">On Going</option>
-                                                                <option value="Pending">Pending</option>
-                                                                <option value="Done">Done</option>
-                                                            </select>
-                                                        </form>
-                                                    }
-                                                    {
-
-
-
-                                                        <form>
-                                                            <select value={service.status} onChange={(e) => handleChange(e, service)}>
-                                                                <option value="On Going">On Going</option>
-                                                                <option value="Pending">Pending</option>
-                                                                <option value="Done">Done</option>
-                                                            </select>
-                                                        </form>
-
-                                                    }
                                                 </td>
                                             </tr>
                                         )
