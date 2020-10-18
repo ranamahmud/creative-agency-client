@@ -3,7 +3,10 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
 import './MakeAdmin.css'
+import { useAlert } from 'react-alert'
+
 const MakeAdmin = () => {
+    const alert = useAlert()
 
     const [info, setInfo] = useState({});
 
@@ -15,23 +18,29 @@ const MakeAdmin = () => {
     }
 
     const handleSubmit = () => {
-        console.log("button clicked")
-        const formData = new FormData()
-        console.log(info);
-        formData.append('email', info.email);
+        if (info.email === '') {
+            alert.error('Please enter email')
+        } else {
+            const formData = new FormData()
+            formData.append('email', info.email);
 
-        // fetch('https://salty-plateau-71286.herokuapp.com/makeAdmin', {
-        fetch('http://localhost:5000/makeAdmin', {
-            method: 'POST',
-            body: formData
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
+            // fetch('https://salty-plateau-71286.herokuapp.com/makeAdmin', {
+            fetch('http://localhost:5000/makeAdmin', {
+                method: 'POST',
+                body: formData
             })
-            .catch(error => {
-                console.error(error)
-            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    alert.success("Make admin successful.")
+                    document.querySelector('#admin-email').value = ''
+                })
+                .catch(error => {
+                    console.error(error)
+                    alert.error("Make admin failed.")
+                })
+        }
+
     }
 
     return (
@@ -45,7 +54,7 @@ const MakeAdmin = () => {
 
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" name="email" onBlur={handleBlur} required />
+                                <Form.Control type="email" placeholder="Enter email" name="email" onBlur={handleBlur} required id="admin-email" />
                             </Form.Group>
                         </Col>
                         <Col sm="2">
