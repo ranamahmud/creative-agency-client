@@ -18,7 +18,7 @@ const Feedbacks = () => {
                 <div className="text-center">
                     <h5 id="feedback-title">Clients <span style={{ color: '#7AB259' }}>Feedback</span></h5>
                 </div>
-                <div className="row card-deck  mt-5">
+                <div className="row card-deck  mt-5 ">
                     {
                         feedbacks
                             .sort(() => 0.5 - Math.random())

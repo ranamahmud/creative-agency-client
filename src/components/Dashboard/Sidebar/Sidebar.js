@@ -9,7 +9,6 @@ const Sidebar = (props) => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        // fetch('https://salty-plateau-71286.herokuapp.com/isAdmin', {
         fetch('https://creative-agency-service.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -23,7 +22,7 @@ const Sidebar = (props) => {
 
     return (
 
-        <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
+        <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "50vh" }}>
             <ul id="sidebar-list" className="list-unstyled">
 
                 {

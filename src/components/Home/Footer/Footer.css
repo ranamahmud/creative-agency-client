@@ -5,6 +5,7 @@
     top: 2993px;
     background: #FBD062;
 }
+
 #footer-form input{
     width:630px;
 }
@@ -57,4 +58,27 @@ height: 82px;
     letter-spacing: 0.396px;
     color: rgba(0, 0, 0, 0.7);
 
+}
+
+@media (max-width: 576px) {
+   .footer-home {
+       width: 576px;    
+       background: #FBD062;
+   }
+
+   #footer-form input {
+       width: 430px;
+   }
+
+   #footer-form textarea {
+       width: 430px;
+   }
+
+}
+
+
+@media (max-width: 768px) {
+    .footer-home {
+        width: 768px;
+    }
 }

@@ -8,7 +8,7 @@ const Feedback = ({ feedback }) => {
     return (
 
 
-        <div className="card shadow-sm card-feedback">
+        <div className="card shadow-sm card-feedback col-12 col-sm-12">
             <div className="card-header bg-transparent d-flex  align-items-center">
                 {
                     img !== undefined &&
