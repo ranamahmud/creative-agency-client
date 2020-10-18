@@ -1,0 +1,74 @@
+#add-service{
+    padding-left: 33px;
+}
+
+#add-service input{
+  width: 450px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 0.666667px solid #C9C9C9;
+  box-sizing: border-box;
+  border-radius: 3.33333px;
+}
+
+#add-service textarea{
+    width: 450px;
+    height: 121px;
+    background: #FFFFFF;
+    border: 0.666667px solid #C9C9C9;
+    box-sizing: border-box;
+    border-radius: 3.33333px;
+}
+
+ #add-service>div:nth-child(1)>label {
+    height: 24px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    color: #232323;
+}
+
+#add-service>div:nth-child(2)>label {
+   width: 92.67px;
+   height: 18.67px;
+   font-family: Poppins;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 24px;
+   color: #000000;
+}
+
+#upload-btn-img{
+ width: 173px;
+ height: 40px;
+ background: #DEFFED;
+ border: 1px solid #009444;
+ box-sizing: border-box;
+ border-radius: 5px;
+}
+
+#upload-btn-img p {
+    padding-top: 18px;
+    padding-left: 48px;
+}
+#upload-btn-img::after {
+    visibility: hidden;
+}
+
+#upload-img-form{
+    padding-top: 65px;
+}
+
+#add-btn{
+    background-color: #009444 !important;
+    width: 108px;
+    height: 37px;
+    border:1px solid green;
+    border-radius: 5px;
+        margin-top: 200px;
+
+}
