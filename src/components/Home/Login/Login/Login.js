@@ -6,6 +6,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import './Login.css'
+
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();

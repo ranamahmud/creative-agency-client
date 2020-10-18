@@ -3,11 +3,10 @@ import { UserContext } from '../../App';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
 import './ServiceListAdmin.css'
+import { useAlert } from 'react-alert'
 
 const ServiceListAdmin = () => {
-    const [selectedOption, setSelectedOption] = useState();
-
-
+    const alert = useAlert()
     const [userService, setUserService] = useState([])
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     useEffect(() => {
@@ -21,10 +20,32 @@ const ServiceListAdmin = () => {
         'Pending': "#FF4545"
     }
     const handleChange = (e) => {
-        console.log(e.target.value);
-        e.target.style.color = colors[e.target.value]
+        const id = e.target.id;
+        const status = e.target.value;
+        e.target.style.color = colors[status]
+        updateOrder(id, status)
     };
 
+
+    const updateOrder = (id, status) => {
+        const order = { status };
+        fetch('http://localhost:5000/updateOrders/' + id, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json()) // or res.json()
+            .then(result => {
+                if (result) {
+                    // reload orders
+                    alert.success('Order Status updated successfully.')
+                    // loadOrders();
+                } else {
+                    alert.error('Order Status updated failed.')
+                }
+            })
+
+    }
     return (
         <section>
             <NavbarMain />
@@ -66,6 +87,7 @@ const ServiceListAdmin = () => {
                                                             color: colors[service.status]
                                                         }}
                                                         onChange={handleChange}
+                                                        id={service._id}
                                                     >
                                                         <option value="Done" style={{ color: colors['Done'] }}>Done</option>
                                                         <option value="On Going" style={{ color: colors['On Going'] }}>On Going</option>
