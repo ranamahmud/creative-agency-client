@@ -17,13 +17,11 @@ const AddService = () => {
 
     const handleFileChange = (e) => {
         const newFile = e.target.files[0];
-        console.log(newFile)
         setFile(newFile);
     }
 
     const handleSubmit = (e) => {
         const formData = new FormData()
-        console.log(serviceInfo);
         if (file === null) {
             alert.error('You must select a image file')
 
@@ -33,9 +31,7 @@ const AddService = () => {
             formData.append('email', serviceInfo.email);
             formData.append('name', serviceInfo.name);
             formData.append('detail', serviceInfo.detail);
-            console.log(formData);
-            // fetch('https://salty-plateau-71286.herokuapp.com/addADoctor', {  
-            fetch('http://localhost:5000/addService', {
+            fetch('https://creative-agency-service.herokuapp.com/addService', {
                 method: 'POST',
                 body: formData
             })

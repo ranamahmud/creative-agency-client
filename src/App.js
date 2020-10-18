@@ -28,13 +28,13 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
-          <Route path="/dashboard" component={Dashboard} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
           <PrivateRoute path="/order" component={Order} />
-          <Route path="/service-list" component={ServiceList} />
-          <Route path="/service-list-admin" component={ServiceListAdmin} />
-          <Route path="/review" component={Review} />
-          <Route path="/add-service" component={AddService} />
-          <Route path="/make-admin" component={MakeAdmin} />
+          <PrivateRoute path="/service-list" component={ServiceList} />
+          <PrivateRoute path="/service-list-admin" component={ServiceListAdmin} />
+          <PrivateRoute path="/review" component={Review} />
+          <PrivateRoute path="/add-service" component={AddService} />
+          <PrivateRoute path="/make-admin" component={MakeAdmin} />
         </Switch>
       </Router>
     </UserContext.Provider>

@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Image, Nav, Button, Navbar } from 'react-bootstrap';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, Redirect, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import "./NavbarMain.css"
 import "firebase/auth";
@@ -10,20 +10,28 @@ import jwt_decode from "jwt-decode";
 
 const NavbarMain = () => {
     const history = useHistory();
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    useEffect(() => {
+        fetch('https://creative-agency-service.herokuapp.com/isAdmin', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser && loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsAdmin(data));
+
+    }, [])
 
     const location = useLocation();
-    const { from } = location.state || { from: { pathname: "/" } };
-
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const logout = () => {
-        console.log('clicked');
 
         if (firebase.apps.length === 0) {
             firebase.initializeApp(firebaseConfig);
         }
         firebase.auth().signOut().then(function () {
             // Sign-out successful.
-            console.log('logged out');
             sessionStorage.setItem('token', null);
             setLoggedInUser(null)
             history.replace('/');
@@ -32,18 +40,6 @@ const NavbarMain = () => {
         });
     }
 
-    const isLoggedIn = () => {
-        const token = sessionStorage.getItem('token');
-        if (!token) {
-            return false;
-        }
-        const decodedToken = jwt_decode(token);
-        // get current time
-        const currentTime = new Date().getTime() / 1000;
-        // compare the expiration time with the current time
-        // will return false if expired and will return true if not expired
-        return decodedToken.exp > currentTime;
-    }
     return (
         <Navbar expand="lg">
 
@@ -67,8 +63,16 @@ const NavbarMain = () => {
                             <Nav.Link href="#footer">Contact Us</Nav.Link>
 
                             {
+
                                 (loggedInUser && loggedInUser.email) ?
-                                    <Button variant="dark" id="login-btn" onClick={logout}>Logout</Button> :
+                                    <>
+                                        <Button variant="dark" id="login-btn" onClick={logout}>Logout</Button>
+                                        <Link className="nav-link text-white" to={isAdmin ? "/service-list-admin" : "/order"}>
+                                            <Button
+                                                id="dash-btn" variant="dark" >Dashboard</Button>
+                                        </Link>
+                                    </>
+                                    :
                                     <Link className="nav-link text-white" to="/login">
                                         <Button variant="dark" id="login-btn">Login</Button>
                                     </Link>
@@ -90,9 +94,7 @@ const NavbarMain = () => {
                             {
                                 (loggedInUser && loggedInUser.email) ?
                                     <>
-                                        <Link className="nav-link">
-                                            {loggedInUser.name}
-                                        </Link>
+                                        <p style={{ marginRight: "50px", marginTop: "20px" }}> {loggedInUser.name}</p>
                                         <Button className="nav-link text-white" variant="dark" id="login-btn" onClick={logout}>Logout</Button>
 
                                     </>

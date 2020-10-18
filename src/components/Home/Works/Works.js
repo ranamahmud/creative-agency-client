@@ -53,6 +53,7 @@ const Works = () => {
                     {images.map(image => {
                         return (
                             <Image fluid
+                                key={image}
                                 draggable={false}
                                 style={{
                                     width: "468.1px",

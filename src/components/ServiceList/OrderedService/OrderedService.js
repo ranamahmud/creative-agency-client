@@ -2,6 +2,7 @@ import React from 'react';
 import { Image } from 'react-bootstrap';
 import './OrderedService.css'
 const OrderedService = ({ service }) => {
+
     return (
 
         <div className="col-md-4 card-ordered text-center">
@@ -21,7 +22,7 @@ const OrderedService = ({ service }) => {
                     <div className="col">
                         {
                             service.status == "Pending" &&
-                            <button type="button" class="btn btn-lg order-status" disabled
+                            <button type="button" className="btn btn-lg order-status" disabled
                                 style={{
                                     backgroundColor: '#FFE3E3',
                                     color: '#FF4545'
@@ -32,7 +33,7 @@ const OrderedService = ({ service }) => {
                         }
                         {
                             service.status == "Done" &&
-                            <button type="button" class="btn btn-lg order-status" disabled
+                            <button type="button" className="btn btn-lg order-status" disabled
                                 style={{
                                     backgroundColor: '#C6FFE0',
                                     color: '#009444'
@@ -43,7 +44,7 @@ const OrderedService = ({ service }) => {
                         }
                         {
                             service.status == "On Going" &&
-                            <button type="button" class="btn btn-lg order-status" disabled
+                            <button type="button" className="btn btn-lg order-status" disabled
                                 style={{
                                     backgroundColor: 'rgba(255, 161, 92,0.20)',
                                     color: '#FFBD3E'

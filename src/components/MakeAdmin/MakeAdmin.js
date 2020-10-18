@@ -14,7 +14,6 @@ const MakeAdmin = () => {
         const newInfo = { ...info };
         newInfo[e.target.name] = e.target.value;
         setInfo(newInfo);
-        console.log(info)
     }
 
     const handleSubmit = () => {
@@ -24,14 +23,12 @@ const MakeAdmin = () => {
             const formData = new FormData()
             formData.append('email', info.email);
 
-            // fetch('https://salty-plateau-71286.herokuapp.com/makeAdmin', {
-            fetch('http://localhost:5000/makeAdmin', {
+            fetch('https://creative-agency-service.herokuapp.com/makeAdmin', {
                 method: 'POST',
                 body: formData
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
                     alert.success("Make admin successful.")
                     document.querySelector('#admin-email').value = ''
                 })

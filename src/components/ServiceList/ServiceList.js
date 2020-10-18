@@ -8,10 +8,12 @@ const ServiceList = () => {
     const [userService, setUserService] = useState([])
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     useEffect(() => {
-        fetch('http://localhost:5000/services/' + loggedInUser.email)
+        fetch('https://creative-agency-service.herokuapp.com/orders/' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setUserService(data))
     }, [])
+
+
     return (
         <section>
             <NavbarMain />

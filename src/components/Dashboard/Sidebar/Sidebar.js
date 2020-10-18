@@ -1,17 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Image, Nav, Navbar } from 'react-bootstrap';
-import { Link, NavLink, Redirect, useLocation } from 'react-router-dom';
+import { Link, NavLink, Redirect, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import './Sidebar.css'
 const Sidebar = (props) => {
     const location = useLocation();
-
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [isAdmin, setIsAdmin] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
         // fetch('https://salty-plateau-71286.herokuapp.com/isAdmin', {
-        fetch('http://localhost:5000/isAdmin', {
+        fetch('https://creative-agency-service.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -24,10 +23,8 @@ const Sidebar = (props) => {
 
     return (
 
-
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
             <ul id="sidebar-list" className="list-unstyled">
-
 
                 {
                     isAdmin === false &&

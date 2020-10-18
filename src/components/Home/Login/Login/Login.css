@@ -6,8 +6,6 @@
     /* position: absolute; */
     width: 202.81px;
     height: 60px;
-    left: 575px;
-
     margin: 0 auto;
 }
 
@@ -84,4 +82,10 @@
     width: 31px;
     height: 31.74px;
     top: 396px;
+}
+
+div#login-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

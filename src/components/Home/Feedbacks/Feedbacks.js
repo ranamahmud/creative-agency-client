@@ -8,7 +8,7 @@ const Feedbacks = () => {
     const [feedbacks, setFeedbacks] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/feedbacks')
+        fetch('https://creative-agency-service.herokuapp.com/feedbacks')
             .then(res => res.json())
             .then(data => setFeedbacks(data))
     }, [])
@@ -22,7 +22,7 @@ const Feedbacks = () => {
                     {
                         feedbacks
                             .sort(() => 0.5 - Math.random())
-                            .slice(0, 3).map(feedback => <Feedback feedback={feedback} key={feedback.name} />)
+                            .slice(0, 3).map(feedback => <Feedback feedback={feedback} key={feedback._id} />)
                     }
                 </div>
             </div>

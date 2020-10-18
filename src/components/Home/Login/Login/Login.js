@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import { Container, Form, Image, Row } from 'react-bootstrap';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../../../App';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import './Login.css'
+import { useAlert } from 'react-alert';
 
 const Login = () => {
+    const alert = useAlert();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
@@ -26,7 +28,7 @@ const Login = () => {
             storeAuthToken();
         }).catch(function (error) {
             const errorMessage = error.message;
-            console.log(errorMessage);
+            alert.error("Login Failed")
         });
     }
 
@@ -43,8 +45,12 @@ const Login = () => {
     return (
 
         <Container>
-            <Row id="login-logo">
-                <Image src={require('../../../../images/logos/logo.png')} />
+            <Row id="login-logo" >
+
+                <Link to="/" >
+                    <Image src={require('../../../../images/logos/logo.png')} />
+
+                </Link>
             </Row>
             <Row id="login-form">
                 <Form >

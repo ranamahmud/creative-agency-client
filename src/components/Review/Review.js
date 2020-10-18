@@ -8,9 +8,7 @@ import { UserContext } from '../../App';
 
 const Review = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    console.log(loggedInUser);
     const alert = useAlert()
-    console.log(loggedInUser.photoURL);
     const [review, setReview] = useState({
         img: loggedInUser.photoURL
     });
@@ -22,16 +20,12 @@ const Review = () => {
 
     const handleAddReview = (e) => {
 
-        console.log(review);
-        // fetch('https://vast-waters-59392.herokuapp.com/addActivity', {
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://creative-agency-service.herokuapp.com/addReview', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(review),
         })
             .then(res => {
-                console.log("success");
-                // history.push('/event-tasks');
                 alert.success('Review Placed Successfully!')
                 document.querySelector('#review-form').reset()
 
@@ -67,7 +61,7 @@ const Review = () => {
                                 onBlur={handleBlur} required
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button style={{ border: 'none' }} variant="primary" type="submit">
                             Submit
   </Button>
                     </Form>

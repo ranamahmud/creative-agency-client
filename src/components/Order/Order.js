@@ -19,13 +19,11 @@ const Order = (props) => {
 
     const handleFileChange = (e) => {
         const newFile = e.target.files[0];
-        console.log(newFile)
         setFile(newFile);
     }
 
     const handleSubmit = (e) => {
         const formData = new FormData()
-        console.log(info);
         if (file === null) {
             alert.error('You must select a image file')
 
@@ -36,9 +34,8 @@ const Order = (props) => {
             formData.append('name', info.name);
             formData.append('details', info.details);
             formData.append('price', info.price);
-            console.log(info);
-            // fetch('https://salty-plateau-71286.herokuapp.com/addADoctor', {  
-            fetch('http://localhost:5000/addOrder', {
+            formData.append('status', info.status);
+            fetch('https://creative-agency-service.herokuapp.com/addOrder', {
                 method: 'POST',
                 body: formData
             })
@@ -72,11 +69,15 @@ const Order = (props) => {
                     <form id="order-form" onSubmit={handleSubmit}>
                         <div className="form-group">
 
-                            <input onBlur={handleBlur} type="text" className="form-control" name="userName" placeholder="Your name / company’s name" />
+                            <input onBlur={handleBlur} type="text" className="form-control" name="userName" placeholder="Your name / company’s name"
+                                required
+                            />
                         </div>
                         <div className="form-group">
 
-                            <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Enter email" />
+                            <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Enter email"
+                                required
+                            />
                         </div>
                         <div className="form-group">
 
@@ -84,7 +85,7 @@ const Order = (props) => {
                                 defaultValue={
                                     props.location.state === undefined ? '' : props.location.state.name
                                 }
-
+                                required
                             />
                         </div>
                         <div className="form-group">
@@ -93,7 +94,7 @@ const Order = (props) => {
                         </div>
                         <div className="form-group">
 
-                            <input onBlur={handleBlur} type="number" className="form-control" name="price" placeholder="Price" />
+                            <input onBlur={handleBlur} type="number" className="form-control" name="price" placeholder="Price" required />
                         </div>
                         <div className="form-group">
                             <div className="custom-file"
@@ -105,6 +106,7 @@ const Order = (props) => {
                                 <input type="file"
                                     onChange={handleFileChange}
                                     id="customFile"
+                                    required
                                 />
 
                             </div>

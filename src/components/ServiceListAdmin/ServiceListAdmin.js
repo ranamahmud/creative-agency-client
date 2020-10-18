@@ -10,7 +10,7 @@ const ServiceListAdmin = () => {
     const [userService, setUserService] = useState([])
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://creative-agency-service.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setUserService(data))
     }, [])
@@ -29,7 +29,7 @@ const ServiceListAdmin = () => {
 
     const updateOrder = (id, status) => {
         const order = { status };
-        fetch('http://localhost:5000/updateOrders/' + id, {
+        fetch('https://creative-agency-service.herokuapp.com/updateOrders/' + id, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(order)
@@ -81,13 +81,14 @@ const ServiceListAdmin = () => {
                                                 <td style={{ width: "150px" }}>{service.name}</td>
                                                 <td>{service.details}</td>
                                                 <td style={{ width: "200px" }}>
-                                                    <select class="custom-select" id="inputGroupSelect01"
+                                                    <select className="custom-select" id="inputGroupSelect01"
                                                         defaultValue={service.status}
                                                         style={{
                                                             color: colors[service.status]
                                                         }}
                                                         onChange={handleChange}
                                                         id={service._id}
+                                                        key={service._id}
                                                     >
                                                         <option value="Done" style={{ color: colors['Done'] }}>Done</option>
                                                         <option value="On Going" style={{ color: colors['On Going'] }}>On Going</option>
