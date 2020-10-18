@@ -11,8 +11,25 @@ const ServiceDetail = ({ service }) => {
                     ...service
                 }
             }}>
-                <img src=
-                    {require(`../../../images/icons/${service.img}`)} alt="" />
+
+
+                {
+                    service.image && (
+                        (service.image
+                            && typeof (service.image) !== "string") ? <img
+                                className="mx-3 md-4"
+                                width="64" height="64"
+                                src={`data:image/png;base64,${service.image.img}`} />
+                            :
+                            <img
+                                className="mx-3 md-4"
+                                width="64" height="64"
+                                src={require(`../../../images/icons/${service.image}`)} alt="" />
+                    )
+
+                }
+
+
                 <h5 className="mt-3 mb-3">{service.name}</h5>
                 <p className="text-secondary">{service.detail}</p>
             </Link>

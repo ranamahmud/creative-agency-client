@@ -29,6 +29,7 @@ const Services = () => {
                 <div className="w-75 row mt-5 pt-5">
                     {
                         services
+                            .sort(() => 0.5 - Math.random())
                             .slice(0, 3)
                             .map(service => <ServiceDetail service={service} key={service._id}></ServiceDetail>)
                     }
