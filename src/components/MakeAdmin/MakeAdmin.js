@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import NavbarMain from '../Home/NavbarMain/NavbarMain';
-
+import './MakeAdmin.css'
 const MakeAdmin = () => {
 
     const [info, setInfo] = useState({});
@@ -39,8 +39,8 @@ const MakeAdmin = () => {
             <NavbarMain />
             <div className="container-fluid row">
                 <Sidebar></Sidebar>
-                <div className="col-md-10 col-sm-12 col-12 d-flex">
-                    <Form as={Row}>
+                <div className="col-md-10 col-sm-12 col-12 d-flex" id="make-admin-div">
+                    <Form id="make-admin-form" as={Row}>
                         <Col sm="10">
 
                             <Form.Group controlId="formBasicEmail">
@@ -49,7 +49,7 @@ const MakeAdmin = () => {
                             </Form.Group>
                         </Col>
                         <Col sm="2">
-                            <Button onClick={handleSubmit} variant="primary" type="submit">
+                            <Button id="make-admin-btn" onClick={handleSubmit} variant="primary" type="submit">
                                 Submit
   </Button>
                         </Col>
