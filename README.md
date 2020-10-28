@@ -1,3 +1,26 @@
+# Creative Agency
+# Live Site Link
+[https://creative-agency-d474c.web.app/](https://creative-agency-d474c.web.app/)
+# Overview
+# Features
+5-7-10
+# Dependency
+Used node pacakges
+1. firebase
+2. jquery
+3. jwt-decode
+4. react
+5. react-alert
+6. react-bootstrap
+7. react-multi-carousel
+8. react-spring
+9. fortawesome
+# Technology Used
+# Screenshots
+
+# Resume Link
+[https://drive.google.com/file/d/1ujv7trChovIPBPuZUj2Blh52QEScZs2L/view?usp=sharing](https://drive.google.com/file/d/1ujv7trChovIPBPuZUj2Blh52QEScZs2L/view?usp=sharing)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

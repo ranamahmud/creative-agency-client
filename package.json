@@ -22,6 +22,7 @@
     "react-scripts": "3.4.3",
     "react-select": "^3.1.0",
     "react-select-input": "^1.0.5",
+    "react-spring": "^8.0.27",
     "ua-parser-js": "^0.7.22"
   },
   "scripts": {
