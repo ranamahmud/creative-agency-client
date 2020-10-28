@@ -1,9 +1,18 @@
 # Creative Agency
-# Live Site Link
-[https://creative-agency-d474c.web.app/](https://creative-agency-d474c.web.app/)
 # Overview
+SPA for providing digital services to clients.
+## Live Site Link
+[https://creative-agency-d474c.web.app/](https://creative-agency-d474c.web.app/)
+
 # Features
-5-7-10
+- Users can order digital service.
+- Users can provide feedback of ordered service.
+- Admins can manage service.
+- Admins can add new service.
+- Responsive web app to order and manage digital service.
+- User dashboard for users to manage their orders.
+- Admin dashboard for admins manages orders.
+  
 # Dependency
 Used node pacakges
 1. firebase
@@ -16,8 +25,16 @@ Used node pacakges
 8. react-spring
 9. fortawesome
 # Technology Used
+1. React JavaScript
+2. MongoDB
+3. HTML5
+4. CSS3
+5. Firebase
+6. Bootstrap
 # Screenshots
-
+![Home](home.png)
+![Order](user-order.png)
+![Add Service](admin-add.png)
 # Resume Link
 [https://drive.google.com/file/d/1ujv7trChovIPBPuZUj2Blh52QEScZs2L/view?usp=sharing](https://drive.google.com/file/d/1ujv7trChovIPBPuZUj2Blh52QEScZs2L/view?usp=sharing)
 
